@@ -19,3 +19,5 @@ Usage
 const { certificates, onSelectCertificate, onSignMessage, hasCertificates } =
   useCryptoPro((data) => console.log("onSignMessage", data));
 ```
+
+## [crypto-pro documentation github](https://github.com/vgoma/crypto-pro#install)
