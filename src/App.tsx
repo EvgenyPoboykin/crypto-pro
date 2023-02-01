@@ -1,4 +1,4 @@
-import { execute, getSystemInfo } from "crypto-pro";
+import { getSystemInfo, isValidSystemSetup } from "crypto-pro";
 
 import { CryptoProAttached } from "./crypto-pro-attached";
 import { CryptoProDetached } from "./crypto-pro-detached";
@@ -10,9 +10,7 @@ function App() {
   };
 
   useEffect(() => {
-    execute((api) => {
-      (window as any).cadesplugin = api.cadesplugin;
-    });
+    isValidSystemSetup().then((data) => console.log(data));
   }, []);
   return (
     <div className="App">

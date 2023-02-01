@@ -10,6 +10,7 @@ import {
   createHash,
   getCertificate,
   getUserCertificates,
+  isValidSystemSetup,
 } from "crypto-pro";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
@@ -25,13 +26,10 @@ export const useCryptoProDetached: UseCryptoProType = (signCallback) => {
 
         const hashMessage = await createHash(message);
 
-        console.log(hashMessage);
-
         const response = await createDetachedSignature(
           certificate.thumbprint,
           hashMessage
         );
-        console.log(response);
 
         signCallback?.(response);
       } catch (error) {
@@ -58,10 +56,16 @@ export const useCryptoProDetached: UseCryptoProType = (signCallback) => {
 
   const onCertificates = useCallback(async () => {
     try {
+      const isValid = await isValidSystemSetup();
+
+      if (!isValid) {
+        throw Error("don not setup");
+      }
       const response = await getUserCertificates();
 
       setCertificates(response);
       setCertificate(response[0]);
+      console.log(response[0]);
     } catch (error) {
       // ...
     }
