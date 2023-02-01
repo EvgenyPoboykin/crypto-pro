@@ -1,4 +1,4 @@
-import { Certificate } from "crypto-pro";
+import { Certificate } from "crypto-pro-js";
 
 export interface UseCryptoProReturnType {
   onSelectCertificate: (thumbprint: string) => Promise<void>;

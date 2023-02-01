@@ -11,7 +11,7 @@ import {
   getCertificate,
   getUserCertificates,
   isValidSystemSetup,
-} from "crypto-pro";
+} from "crypto-pro-js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useCryptoProDetached: UseCryptoProType = (signCallback) => {

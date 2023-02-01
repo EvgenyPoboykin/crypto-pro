@@ -10,6 +10,8 @@ cadesplugin.set_log_level(cadesplugin.LOG_LEVEL_DEBUG);
 
 ## [docs](https://docs.cryptopro.ru)
 
+## [generate test cerf](https://www.cryptopro.ru/certsrv/certrmpn.asp)
+
 ## [Проверить работу плагина](https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html)
 
 ## useCryptoPro hook
