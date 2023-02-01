@@ -12,6 +12,13 @@ import {
 } from "crypto-pro";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
+/**
+ * useCryptoProAttached - attached sign to document, BIG SIZE return data
+ *
+ * @param signCallback - call return sign document data
+ *
+ */
+
 export const useCryptoProAttached: UseCryptoProType = (signCallback) => {
   const [certificate, setCertificate] = useState<CertificateType | null>(null);
   const [certificates, setCertificates] = useState<CertificatesType>([]);
