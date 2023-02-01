@@ -6,7 +6,7 @@
 cadesplugin.set_log_level(cadesplugin.LOG_LEVEL_DEBUG);
 ```
 
-## [support](https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/232)
+## [crypto-pro documentation github](https://github.com/vgoma/crypto-pro#install)
 
 ## [docs](https://docs.cryptopro.ru)
 
@@ -32,7 +32,7 @@ const { certificates, onSelectCertificate, onSignMessage, hasCertificates } =
   useCryptoPro((data) => console.log("onSignMessage", data));
 ```
 
-## [crypto-pro documentation github](https://github.com/vgoma/crypto-pro#install)
+## [support](https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/232)
 
 ## [FAQ1](https://www.cryptopro.ru/forum2/default.aspx?g=posts&t=18066)
 
