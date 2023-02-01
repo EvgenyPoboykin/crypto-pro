@@ -1,9 +1,10 @@
 import { useCryptoProDetached } from "./crypto-pro detached";
-import { useState } from "react";
 
-export function CryptoProDetached() {
-  const [msg, setMsg] = useState("");
-
+export function CryptoProDetached({
+  message,
+}: {
+  message?: string | ArrayBuffer;
+}) {
   const { certificates, onSelectCertificate, onSignMessage, hasCertificates } =
     useCryptoProDetached((data) => console.log("onSignMessage", data));
 
@@ -25,10 +26,9 @@ export function CryptoProDetached() {
       <hr />
 
       <p>работа хука</p>
-      <textarea value={msg} onChange={(e) => setMsg(e.currentTarget.value)} />
       <button
         onClick={async () => {
-          onSignMessage(msg);
+          onSignMessage(message);
         }}
       >
         onSignMessage

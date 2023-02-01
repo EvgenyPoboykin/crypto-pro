@@ -1,9 +1,10 @@
 import { useCryptoPro } from "./crypto-pro";
-import { useState } from "react";
 
-export function CryptoProAttached() {
-  const [msg, setMsg] = useState("");
-
+export function CryptoProAttached({
+  message,
+}: {
+  message?: string | ArrayBuffer;
+}) {
   const { certificates, onSelectCertificate, onSignMessage, hasCertificates } =
     useCryptoPro((data) => console.log("onSignMessage", data));
 
@@ -25,10 +26,10 @@ export function CryptoProAttached() {
       <hr />
 
       <p>работа хука</p>
-      <textarea value={msg} onChange={(e) => setMsg(e.currentTarget.value)} />
+
       <button
         onClick={async () => {
-          onSignMessage(msg);
+          onSignMessage(message);
         }}
       >
         onSignMessage

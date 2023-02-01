@@ -2,7 +2,7 @@ import { Certificate } from "crypto-pro";
 
 export interface UseCryptoProReturnType {
   onSelectCertificate: (thumbprint: string) => Promise<void>;
-  onSignMessage: (message: string | ArrayBuffer) => Promise<void>;
+  onSignMessage: (message?: string | ArrayBuffer) => Promise<void>;
   certificates: Certificate[];
   hasCertificates: boolean;
 }
