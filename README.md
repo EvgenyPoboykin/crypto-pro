@@ -39,3 +39,5 @@ cadesplugin.set_log_level(cadesplugin.LOG_LEVEL_DEBUG);
 ```
 
 ## [support](https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/232)
+
+## [docs](https://docs.cryptopro.ru)
