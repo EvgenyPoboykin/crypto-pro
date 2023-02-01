@@ -1,4 +1,4 @@
-import { useCryptoPro } from "./crypto-pro";
+import { useCryptoProAttached } from "./@bcs/crypto-pro";
 
 export function CryptoProAttached({
   message,
@@ -6,7 +6,7 @@ export function CryptoProAttached({
   message?: string | ArrayBuffer;
 }) {
   const { certificates, onSelectCertificate, onSignMessage, hasCertificates } =
-    useCryptoPro((data) => console.log("onSignMessage", data));
+    useCryptoProAttached((data) => console.log("onSignMessage", data));
 
   return (
     <div className="App">

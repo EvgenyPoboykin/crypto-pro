@@ -1,4 +1,4 @@
-import { useCryptoProDetached } from "./crypto-pro detached";
+import { useCryptoProDetached } from "./@bcs/crypto-pro";
 
 export function CryptoProDetached({
   message,

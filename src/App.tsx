@@ -3,6 +3,7 @@ import { getSystemInfo, isValidSystemSetup } from "crypto-pro";
 
 import { CryptoProAttached } from "./crypto-pro-attached";
 import { CryptoProDetached } from "./crypto-pro-detached";
+import { convertUploadFileToArrayBuffer } from "./@bcs/crypto-pro";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -17,11 +18,7 @@ function App() {
   }, []);
 
   const handleLoadFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target?.files?.[0];
-    if (!files) return;
-    const blob = new Blob([files]);
-    const buf = await blob.arrayBuffer();
-    setFileBuffer(buf);
+    setFileBuffer(await convertUploadFileToArrayBuffer(e));
   };
 
   return (

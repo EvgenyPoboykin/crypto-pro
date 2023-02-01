@@ -4,17 +4,15 @@ import {
   OnSelectCertificateType,
   OnSignMessageType,
   UseCryptoProType,
-} from "./crypto-pro-detached.types";
+} from "../types";
 import {
-  createDetachedSignature,
-  createHash,
+  createAttachedSignature,
   getCertificate,
   getUserCertificates,
-  isValidSystemSetup,
-} from "crypto-pro-js";
+} from "crypto-pro";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-export const useCryptoProDetached: UseCryptoProType = (signCallback) => {
+export const useCryptoProAttached: UseCryptoProType = (signCallback) => {
   const [certificate, setCertificate] = useState<CertificateType | null>(null);
   const [certificates, setCertificates] = useState<CertificatesType>([]);
 
@@ -24,11 +22,9 @@ export const useCryptoProDetached: UseCryptoProType = (signCallback) => {
         if (!certificate?.thumbprint || !message || !certificate.isValid())
           return;
 
-        const hashMessage = await createHash(message);
-
-        const response = await createDetachedSignature(
+        const response = await createAttachedSignature(
           certificate.thumbprint,
-          hashMessage
+          message
         );
 
         signCallback?.(response);
@@ -56,16 +52,10 @@ export const useCryptoProDetached: UseCryptoProType = (signCallback) => {
 
   const onCertificates = useCallback(async () => {
     try {
-      const isValid = await isValidSystemSetup();
-
-      if (!isValid) {
-        throw Error("don not setup");
-      }
       const response = await getUserCertificates();
 
       setCertificates(response);
       setCertificate(response[0]);
-      console.log(response[0]);
     } catch (error) {
       // ...
     }
