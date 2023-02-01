@@ -1,5 +1,17 @@
 # Crypto Pro Prototype Project
 
+# Debug in Console Browser
+
+```javascript
+cadesplugin.set_log_level(cadesplugin.LOG_LEVEL_DEBUG);
+```
+
+## [support](https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/232)
+
+## [docs](https://docs.cryptopro.ru)
+
+## [Проверить работу плагина](https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html)
+
 ## useCryptoPro hook
 
 Return type
@@ -31,13 +43,3 @@ const { certificates, onSelectCertificate, onSignMessage, hasCertificates } =
 ## [FAQ4](https://www.cryptopro.ru/forum2/default.aspx?g=posts&t=17100)
 
 ## [FAQ5](https://www.cryptopro.ru/forum2/default.aspx?g=posts&t=12112)
-
-# Debug in Console Browser
-
-```javascript
-cadesplugin.set_log_level(cadesplugin.LOG_LEVEL_DEBUG);
-```
-
-## [support](https://support.cryptopro.ru/index.php?/Knowledgebase/Article/View/232)
-
-## [docs](https://docs.cryptopro.ru)
